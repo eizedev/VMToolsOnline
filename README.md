@@ -40,7 +40,7 @@ SYNOPSIS
 
 
 SYNTAX
-    Get-VMToolsOnline [-Uri <String>] [-PassThru] [<CommonParameters>]
+    Get-VMToolsOnline [-Uri <String>] [-PassThru] [-Proxy <Uri>] [<CommonParameters>]
 
     Get-VMToolsOnline [-ShowHeader] [<CommonParameters>]
 
@@ -62,7 +62,7 @@ DESCRIPTION
 
 PARAMETERS
     -Uri <String>
-        String. The URI of the offical VMware Tools release page. No need to change this.
+        String. The URI of the official VMware Tools release page. No need to change this.
 
         Required?                    false
         Position?                    named
@@ -100,25 +100,38 @@ PARAMETERS
         Accept pipeline input?       false
         Accept wildcard characters?  false
 
+    -Proxy <Uri>
+        URI. Optionally, add a proxy in URL format 'http://proxy.domain.de:8080' to use proxy for WebRequest
+
+        Required?                    false
+        Position?                    named
+        Default value
+        Accept pipeline input?       false
+        Accept wildcard characters?  false
+
     <CommonParameters>
         This cmdlet supports the common parameters: Verbose, Debug,
         ErrorAction, ErrorVariable, WarningAction, WarningVariable,
         OutBuffer, PipelineVariable, and OutVariable. For more information, see
-        about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).
 
+INPUTS
+
+OUTPUTS
 
 NOTES
 
 
-        Script:     Get-VMToolsOnline.ps1
-        Author:     Mike Nisk
+        Script:         Get-VMToolsOnline.ps1
+        Author:         Mike Nisk
+        Contributor(s): René (github@eize.dev)
 
     -------------------------- EXAMPLE 1 --------------------------
 
-    PS C:\>Get-VMToolsOnline
+    PS > Get-VMToolsOnline
 
     This example runs the script with no parameters.  By default you will get a
-    report of all available VMware Tools versions on your screen. We maintain the
+    report of all available VMware Tools versions on your screen. WE maintain the
     original formatting where possible.  To use the data as objects see the PassThru
     parameter in the next example.
 
@@ -127,7 +140,7 @@ NOTES
 
     -------------------------- EXAMPLE 2 --------------------------
 
-    PS C:\>$versions = Get-VMToolsOnline -PassThru
+    PS > $versions = Get-VMToolsOnline -PassThru
 
     This example saves the report to a variable.  We use the PassThru parameter which returns
     all data as objects. If we did not use PassThru, then the output is formatted using Format-Table
@@ -138,18 +151,20 @@ NOTES
 
     -------------------------- EXAMPLE 3 --------------------------
 
-    PS C:\>Get-VMToolsOnline -ShowHeader
+    PS > Get-VMToolsOnline -ShowHeader
 
     This example returns the default comments available on the official tools site.
     It contains helpful information about versioning, releases, etc.
 
+
+
+
     -------------------------- EXAMPLE 4 --------------------------
 
-    PS C:\>Get-VMToolsOnline -Raw
+    PS > Get-VMToolsOnline -Raw
 
     Returns the original content with native formatting.  This is the same thing you would see
     if you navigated to https://packages.vmware.com/tools/versions using a browser.
-
 ```
 
 ## Example Output
