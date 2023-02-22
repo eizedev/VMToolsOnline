@@ -54,6 +54,7 @@ Function Get-VMToolsOnline {
   #>
 
     [CmdletBinding(DefaultParameterSetName = 'DefaultSet')]
+    [OutputType('PSCustomObject', 'System.Object[]')]
     Param(
         #String. The URI of the official VMware Tools release page. No need to change this.
         [Parameter(ParameterSetName = 'DefaultSet')]
