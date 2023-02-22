@@ -1,9 +1,11 @@
 ﻿<#	
     ===========================================================================
     Author:       	Mike Nisk
+    Contributor(s): René (github@eize.dev)
     Filename:     	VMToolsOnline.psm1
-    Version:        1.0.0.1
+    Version:        1.1.0.0
     Generated on:   14Oct2018
+    Updated on:     22Feb2022
     -------------------------------------------------------------------------
     Module Name:    VMToolsOnline
     ===========================================================================
